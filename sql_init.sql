@@ -299,7 +299,7 @@ INSERT INTO `Activities` (`activityName`, `destinationID`, `Price`, `Description
 ('Wall Rose Patrol Duty', 5, 50.00, 'Experience a day in the life of a Garrison Regiment soldier.', 8.0),
 ('Historical Archives Visit - Stohess', 4, 75.00, 'Explore the royal archives and uncover secrets of the Walls (if you can get access).', 3.0),
 ('Underground City Tour', 4, 100.00, 'A guided tour of the mysterious Underground city beneath the capital.', 2.5),
-('Marleyan Military Parade', 7, 80.00, 'Witness the grandeur of Marley’s military in Liberio.', 2.0),
+('Marleyan Military Parade', 7, 80.00, 'Witness the grandeur of Marley's military in Liberio.', 2.0),
 ('Hizuru Tea Ceremony', 8, 120.00, 'Participate in a traditional Hizuru tea ceremony.', 1.5),
 ('Wall Maria Titan Ruins Tour', 9, 90.00, 'Explore the remnants of Titan battles in Wall Maria.', 4.0),
 ('Ragako Titan Experiment Exhibit', 10, 60.00, 'Learn about the horrific Titan experiments in Ragako.', 2.0),

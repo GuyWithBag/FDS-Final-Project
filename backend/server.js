@@ -4,12 +4,17 @@ const dotenv = require("dotenv");
 const userRoutes = require("./routes/users");
 const bookingRoutes = require("./routes/bookings");
 const tourPackageRoutes = require("./routes/tourPackages");
+const destinationRoutes = require("./routes/destinations");
+const hotelRoutes = require("./routes/hotels");
+const activityRoutes = require("./routes/activities");
+const transportationRoutes = require("./routes/transportation");
+const paymentRoutes = require("./routes/payments");
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-console.log(userRoutes);
+
 // Middleware
 app.use(express.json());
 
@@ -17,6 +22,11 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/tour-packages", tourPackageRoutes);
+app.use("/api/destinations", destinationRoutes);
+app.use("/api/hotels", hotelRoutes);
+app.use("/api/activities", activityRoutes);
+app.use("/api/transportation", transportationRoutes);
+app.use("/api/payments", paymentRoutes);
 
 // Root endpoint
 app.get("/", (req, res) => {
