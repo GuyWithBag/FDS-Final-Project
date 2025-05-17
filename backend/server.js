@@ -9,6 +9,7 @@ const hotelRoutes = require("./routes/hotels");
 const activityRoutes = require("./routes/activities");
 const transportationRoutes = require("./routes/transportation");
 const paymentRoutes = require("./routes/payments");
+const reviewsRoutes = require("./routes/reviews");
 // In backend/server.js
 const cors = require("cors");
 dotenv.config();
@@ -29,6 +30,7 @@ app.use("/api/hotels", hotelRoutes);
 app.use("/api/activities", activityRoutes);
 app.use("/api/transportation", transportationRoutes);
 app.use("/api/payments", paymentRoutes);
+app.use("/api/reviews", reviewsRoutes);
 
 // Root endpoint
 app.get("/", (req, res) => {

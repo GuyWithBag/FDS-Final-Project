@@ -1,0 +1,36 @@
+import React from 'react';
+import { Review } from '@/types/Review';
+
+interface ReviewItemProps {
+  review: Review;
+}
+
+const ReviewItem: React.FC<ReviewItemProps> = ({ review }) => {
+  // Helper to display the reviewed item (Package, Hotel, or Activity)
+  const getReviewedItemName = () => {
+    if (review.PackageName) return `Package: ${review.PackageName}`;
+    if (review.HotelName) return `Hotel: ${review.HotelName}`;
+    if (review.ActivityName) return `Activity: ${review.ActivityName}`;
+    return 'General Review';
+  };
+
+  return (
+    <div className="bg-white p-4 rounded-lg shadow-md mb-4 border border-gray-200">
+      <div className="flex items-center mb-2">
+        <div className="font-bold text-blue-700 mr-2">{review.FirstName} {review.LastName}</div>
+        <div className="text-sm text-gray-500">{new Date(review.reviewDate).toLocaleDateString()}</div>
+      </div>
+      <div className="mb-2">
+        <span className="font-semibold">Rating:</span> {review.rating} / 5
+      </div>
+      <div className="text-gray-700 mb-2">
+        <span className="font-semibold">Item:</span> {getReviewedItemName()}
+      </div>
+      {review.comment && (
+        <p className="text-gray-800 italic">"{review.comment}"</p>
+      )}
+    </div>
+  );
+};
+
+export default ReviewItem;
