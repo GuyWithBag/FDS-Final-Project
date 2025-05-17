@@ -37,8 +37,8 @@ const BookingList: React.FC = () => {
   if (bookings.length === 0) return <div>No bookings found.</div>;
 
   return (
-    <div className="mt-8">
-      <h2 className="text-2xl font-bold mb-4">My Bookings</h2>
+    <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-4 text-black">My Bookings</h2>
       <p className="text-sm text-black mb-4">Note: Payment status updates automatically when booking is completed (via SQL trigger).</p>
       <table className="min-w-full bg-white border border-gray-200">
         <thead>

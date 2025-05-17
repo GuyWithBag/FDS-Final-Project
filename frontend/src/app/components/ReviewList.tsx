@@ -38,7 +38,7 @@ const ReviewList: React.FC = () => {
 
   return (
     <div className="mt-8">
-      <h2 className="text-2xl font-bold mb-4">All Reviews</h2>
+      <h2 className="text-2xl font-bold mb-4 text-black">All Reviews</h2>
       <div className="space-y-4">
         {reviews.map(review => (
           <ReviewItem key={review.reviewID} review={review} />

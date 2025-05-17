@@ -99,7 +99,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ packageId /*, onBookingSucces
         <button
           type="submit"
           disabled={loading}
-          className={`w-full px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${loading ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
+          className={`w-full px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${loading ? 'bg-orange-400' : 'bg-orange-600 hover:bg-orange-700'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500`}
         >
           {loading ? 'Booking...' : 'Confirm Booking'}
         </button>

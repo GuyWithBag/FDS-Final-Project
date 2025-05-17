@@ -16,9 +16,9 @@ const ReviewItem: React.FC<ReviewItemProps> = ({ review }) => {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md mb-4 border border-gray-200">
+    <div className="bg-white p-4 rounded-lg shadow-md mb-4 border border-gray-200 hover:shadow-lg transition-shadow">
       <div className="flex items-center mb-2">
-        <div className="font-bold text-blue-700 mr-2">{review.FirstName} {review.LastName}</div>
+        <div className="font-bold text-orange-500 mr-2">{review.FirstName} {review.LastName}</div>
         <div className="text-sm text-black">{new Date(review.reviewDate).toLocaleDateString()}</div>
       </div>
       <div className="text-black mb-2">

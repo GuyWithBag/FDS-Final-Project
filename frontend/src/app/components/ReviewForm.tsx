@@ -146,7 +146,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onReviewAdded }) => {
    };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md mt-8">
+    <div className="bg-white p-6 rounded-lg shadow-md mt-8 hover:shadow-lg transition-shadow">
       <h3 className="text-xl font-bold mb-4 text-black">Leave a Review</h3>
        {itemsLoading && <p className="text-black">Loading items for review...</p>}
        {itemsError && <p className="text-red-500">Error loading items: {itemsError}</p>}
@@ -162,7 +162,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onReviewAdded }) => {
                     setReviewedItemId(null); // Reset item ID when type changes
                 }}
                 required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm text-black"
               >
                 <option value="" className="text-black">Select type</option>
                 <option value="package" className="text-black">Tour Package</option>
@@ -179,7 +179,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onReviewAdded }) => {
                        value={reviewedItemId || ''}
                        onChange={(e) => setReviewedItemId(parseInt(e.target.value))}
                        required
-                       className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
+                       className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm text-black"
                      >
                        <option value="" className="text-black">-- Select an item --</option>
                        {getItemsList().map((item: any) => (
@@ -199,7 +199,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onReviewAdded }) => {
                 required
                 min="1"
                 max="5"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm text-black"
               />
             </div>
 
@@ -211,7 +211,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onReviewAdded }) => {
                 onChange={(e) => setComment(e.target.value)}
                 rows={4}
                 required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm text-black"
               ></textarea>
             </div>
 
@@ -221,7 +221,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onReviewAdded }) => {
             <button
               type="submit"
               disabled={loading || itemsLoading}
-              className={`w-full px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${loading || itemsLoading ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
+              className={`w-full px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${loading || itemsLoading ? 'bg-orange-400' : 'bg-orange-600 hover:bg-orange-700'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500`}
             >
               {loading ? 'Submitting...' : 'Submit Review'}
             </button>

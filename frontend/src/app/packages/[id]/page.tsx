@@ -38,10 +38,10 @@ export default function PackageDetailsPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 pt-20">
-      <h1 className="text-3xl font-bold mb-4 text-blue-800">{packageDetails.PackageName}</h1>
+      <h1 className="text-3xl font-bold mb-4 text-white">{packageDetails.PackageName}</h1>
       {/* Add more package details here */}
       <p className="text-gray-700 mb-4">{packageDetails.Description}</p>
-      <div className="text-lg font-semibold text-gray-900 mb-4">
+      <div className="text-lg font-semibold text-orange-600 mb-4">
         Price: ${Number(packageDetails.BasePrice).toFixed(2)}
       </div>
       <div className="text-gray-600 mb-6">

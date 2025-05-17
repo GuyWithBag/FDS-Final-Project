@@ -127,7 +127,10 @@ const BookingRow: React.FC<BookingRowProps> = ({ booking, onBookingUpdated }) =>
       <td className="py-2 px-4 border-b text-black">{new Date(booking.BookingDate).toLocaleDateString()}</td>
       <td className="py-2 px-4 border-b text-black">${Number(booking.BookingPrice).toFixed(2)}</td>
       <td className="py-2 px-4 border-b text-black">{booking.BookingStatus}</td>
-      <td className="py-2 px-4 border-b">
+      <td className="py-2 px-4 border-b text-black">
+        {loadingPayment ? 'Fetching...' : errorPayment ? 'Error' : paymentStatus}
+      </td>
+      <td className="py-2 px-4 border-b space-x-2">
         <div className="flex space-x-2 items-center">
           {/* Add conditions to hide/show buttons based on booking status if needed */}
           <button 
