@@ -1,5 +1,6 @@
 import React from 'react';
 import { Review } from '@/types/Review';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 
 interface ReviewItemProps {
   review: Review;
@@ -21,7 +22,14 @@ const ReviewItem: React.FC<ReviewItemProps> = ({ review }) => {
         <div className="text-sm text-black">{new Date(review.reviewDate).toLocaleDateString()}</div>
       </div>
       <div className="text-black mb-2">
-        <span className="font-semibold">Rating:</span> {review.rating} / 5
+        <span className="font-semibold">Rating:</span>
+        {[...Array(5)].map((_, index) => {
+          return index < review.rating ? (
+            <FaStar key={index} className="text-yellow-500 inline-block mx-px" />
+          ) : (
+            <FaRegStar key={index} className="text-gray-300 inline-block mx-px" />
+          );
+        })}
       </div>
       <div className="text-black mb-2">
         <span className="font-semibold">Item:</span> {getReviewedItemName()}
