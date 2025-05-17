@@ -1,6 +1,5 @@
 // server.js
 const express = require("express");
-const dotenv = require("dotenv");
 const userRoutes = require("./routes/users");
 const bookingRoutes = require("./routes/bookings");
 const tourPackageRoutes = require("./routes/tourPackages");
@@ -12,7 +11,6 @@ const paymentRoutes = require("./routes/payments");
 const reviewsRoutes = require("./routes/reviews");
 // In backend/server.js
 const cors = require("cors");
-dotenv.config();
   
 const app = express();
 const port = process.env.PORT || 3001;
