@@ -37,7 +37,7 @@ export default function PackageDetailsPage() {
   if (!packageDetails) return <div className="max-w-6xl mx-auto px-4 py-8">Package not found.</div>;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-4 py-8 pt-20">
       <h1 className="text-3xl font-bold mb-4 text-blue-800">{packageDetails.PackageName}</h1>
       {/* Add more package details here */}
       <p className="text-gray-700 mb-4">{packageDetails.Description}</p>

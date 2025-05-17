@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Booking } from '@/types/Booking'; // Import the Booking type
+import { FaCheck, FaTimes } from 'react-icons/fa'; // Import icons
 // We might need Payment type later if we fetch full payment details
 // import { Payment } from '@/types/Payment'; 
 
@@ -126,31 +127,36 @@ const BookingRow: React.FC<BookingRowProps> = ({ booking, onBookingUpdated }) =>
       <td className="py-2 px-4 border-b text-black">{new Date(booking.BookingDate).toLocaleDateString()}</td>
       <td className="py-2 px-4 border-b text-black">${Number(booking.BookingPrice).toFixed(2)}</td>
       <td className="py-2 px-4 border-b text-black">{booking.BookingStatus}</td>
-      <td className="py-2 px-4 border-b text-black">
-        {loadingPayment ? 'Fetching...' : errorPayment ? 'Error' : paymentStatus}
-      </td>
-      <td className="py-2 px-4 border-b space-x-2">
-        {/* Add conditions to hide/show buttons based on booking status if needed */}
-        {booking.BookingStatus !== 'Completed' && booking.BookingStatus !== 'Cancelled' && (
-             <button 
-                onClick={handleCompleteBooking} 
-                className="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={actionLoading}
-             >
-                Mark Complete
-             </button>
-        )}
-       {booking.BookingStatus !== 'Cancelled' && (
-            <button 
-                onClick={handleCancelBooking} 
-                className="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={actionLoading}
-            >
-                Cancel
-            </button>
-       )}
-       {actionLoading && <span className="text-black">Loading...</span>}
-       {actionError && <span className="text-red-500 text-sm">{actionError}</span>}
+      <td className="py-2 px-4 border-b">
+        <div className="flex space-x-2 items-center">
+          {/* Add conditions to hide/show buttons based on booking status if needed */}
+          <button 
+            onClick={handleCompleteBooking} 
+            className={`p-2 rounded-full text-sm transition disabled:opacity-50 ${
+              booking.BookingStatus === 'Completed' || booking.BookingStatus === 'Cancelled' || actionLoading
+                ? 'bg-gray-300 text-gray-500 pointer-events-none cursor-not-allowed'
+                : 'bg-green-500 hover:bg-green-600 text-white'
+            } flex items-center justify-center`}
+            disabled={actionLoading || booking.BookingStatus === 'Completed' || booking.BookingStatus === 'Cancelled'}
+            title="Mark Complete"
+          >
+            <FaCheck />
+          </button>
+          <button 
+            onClick={handleCancelBooking} 
+            className={`p-2 rounded-full text-sm transition disabled:opacity-50 ml-2 ${
+              booking.BookingStatus === 'Cancelled' || actionLoading
+                ? 'bg-gray-300 text-gray-500 pointer-events-none cursor-not-allowed'
+                : 'bg-red-500 hover:bg-red-600 text-white'
+            } flex items-center justify-center`}
+            disabled={actionLoading || booking.BookingStatus === 'Cancelled'}
+            title="Cancel"
+          >
+            <FaTimes />
+          </button>
+          {actionLoading && <span className="text-black">Loading...</span>}
+          {actionError && <span className="text-red-500 text-sm">{actionError}</span>}
+        </div>
       </td>
     </tr>
   );
