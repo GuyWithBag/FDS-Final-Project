@@ -147,13 +147,13 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onReviewAdded }) => {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md mt-8">
-      <h3 className="text-xl font-bold mb-4">Leave a Review</h3>
-       {itemsLoading && <p>Loading items for review...</p>}
+      <h3 className="text-xl font-bold mb-4 text-black">Leave a Review</h3>
+       {itemsLoading && <p className="text-black">Loading items for review...</p>}
        {itemsError && <p className="text-red-500">Error loading items: {itemsError}</p>}
       {!itemsLoading && !itemsError && (
          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="reviewedItemType" className="block text-sm font-medium text-gray-700">Review Type</label>
+              <label htmlFor="reviewedItemType" className="block text-sm font-medium text-black">Review Type</label>
               <select
                 id="reviewedItemType"
                 value={reviewedItemType}
@@ -162,35 +162,35 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onReviewAdded }) => {
                     setReviewedItemId(null); // Reset item ID when type changes
                 }}
                 required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
               >
-                <option value="">Select type</option>
-                <option value="package">Tour Package</option>
-                <option value="hotel">Hotel</option>
-                <option value="activity">Activity</option>
+                <option value="" className="text-black">Select type</option>
+                <option value="package" className="text-black">Tour Package</option>
+                <option value="hotel" className="text-black">Hotel</option>
+                <option value="activity" className="text-black">Activity</option>
               </select>
             </div>
 
             {reviewedItemType && (
                  <div>
-                   <label htmlFor="reviewedItem" className="block text-sm font-medium text-gray-700">Select Item</label>
+                   <label htmlFor="reviewedItem" className="block text-sm font-medium text-black">Select Item</label>
                     <select
                        id="reviewedItem"
                        value={reviewedItemId || ''}
                        onChange={(e) => setReviewedItemId(parseInt(e.target.value))}
                        required
-                       className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                       className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
                      >
-                       <option value="">-- Select an item --</option>
+                       <option value="" className="text-black">-- Select an item --</option>
                        {getItemsList().map((item: any) => (
-                         <option key={item[getItemIdFieldName()]} value={item[getItemIdFieldName()]}>{getItemDisplayName(item)}</option>
+                         <option key={item[getItemIdFieldName()]} value={item[getItemIdFieldName()]} className="text-black">{getItemDisplayName(item)}</option>
                        ))}
                     </select>
                  </div>
             )}
 
             <div>
-              <label htmlFor="rating" className="block text-sm font-medium text-gray-700">Rating (1-5)</label>
+              <label htmlFor="rating" className="block text-sm font-medium text-black">Rating (1-5)</label>
               <input
                 type="number"
                 id="rating"
@@ -199,19 +199,19 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ onReviewAdded }) => {
                 required
                 min="1"
                 max="5"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
               />
             </div>
 
             <div>
-              <label htmlFor="comment" className="block text-sm font-medium text-gray-700">Comment</label>
+              <label htmlFor="comment" className="block text-sm font-medium text-black">Comment</label>
               <textarea
                 id="comment"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 rows={4}
                 required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-black"
               ></textarea>
             </div>
 

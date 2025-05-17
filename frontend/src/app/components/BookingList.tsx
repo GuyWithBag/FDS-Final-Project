@@ -39,16 +39,16 @@ const BookingList: React.FC = () => {
   return (
     <div className="mt-8">
       <h2 className="text-2xl font-bold mb-4">My Bookings</h2>
-      <p className="text-sm text-gray-600 mb-4">Note: Payment status updates automatically when booking is completed (via SQL trigger).</p>
+      <p className="text-sm text-black mb-4">Note: Payment status updates automatically when booking is completed (via SQL trigger).</p>
       <table className="min-w-full bg-white border border-gray-200">
         <thead>
           <tr>
-            <th className="py-2 px-4 border-b text-left">Package</th>
-            <th className="py-2 px-4 border-b text-left">Booking Date</th>
-            <th className="py-2 px-4 border-b text-left">Price</th>
-            <th className="py-2 px-4 border-b text-left">Booking Status</th>
-            <th className="py-2 px-4 border-b text-left">Payment Status</th>
-            <th className="py-2 px-4 border-b text-left">Actions</th>
+            <th className="py-2 px-4 border-b text-left text-black">Package</th>
+            <th className="py-2 px-4 border-b text-left text-black">Booking Date</th>
+            <th className="py-2 px-4 border-b text-left text-black">Price</th>
+            <th className="py-2 px-4 border-b text-left text-black">Booking Status</th>
+            <th className="py-2 px-4 border-b text-left text-black">Payment Status</th>
+            <th className="py-2 px-4 border-b text-left text-black">Actions</th>
           </tr>
         </thead>
         <tbody>

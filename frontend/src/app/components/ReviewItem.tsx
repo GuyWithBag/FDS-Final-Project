@@ -18,16 +18,16 @@ const ReviewItem: React.FC<ReviewItemProps> = ({ review }) => {
     <div className="bg-white p-4 rounded-lg shadow-md mb-4 border border-gray-200">
       <div className="flex items-center mb-2">
         <div className="font-bold text-blue-700 mr-2">{review.FirstName} {review.LastName}</div>
-        <div className="text-sm text-gray-500">{new Date(review.reviewDate).toLocaleDateString()}</div>
+        <div className="text-sm text-black">{new Date(review.reviewDate).toLocaleDateString()}</div>
       </div>
-      <div className="mb-2">
+      <div className="text-black mb-2">
         <span className="font-semibold">Rating:</span> {review.rating} / 5
       </div>
-      <div className="text-gray-700 mb-2">
+      <div className="text-black mb-2">
         <span className="font-semibold">Item:</span> {getReviewedItemName()}
       </div>
       {review.comment && (
-        <p className="text-gray-800 italic">"{review.comment}"</p>
+        <p className="text-black italic">"{review.comment}"</p>
       )}
     </div>
   );

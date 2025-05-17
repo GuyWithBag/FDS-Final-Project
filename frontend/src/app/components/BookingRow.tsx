@@ -122,11 +122,11 @@ const BookingRow: React.FC<BookingRowProps> = ({ booking, onBookingUpdated }) =>
 
   return (
     <tr className="hover:bg-gray-50">
-      <td className="py-2 px-4 border-b">{booking.PackageName || 'N/A'}</td>
-      <td className="py-2 px-4 border-b">{new Date(booking.BookingDate).toLocaleDateString()}</td>
-      <td className="py-2 px-4 border-b">${Number(booking.BookingPrice).toFixed(2)}</td>
-      <td className="py-2 px-4 border-b">{booking.BookingStatus}</td>
-      <td className="py-2 px-4 border-b">
+      <td className="py-2 px-4 border-b text-black">{booking.PackageName || 'N/A'}</td>
+      <td className="py-2 px-4 border-b text-black">{new Date(booking.BookingDate).toLocaleDateString()}</td>
+      <td className="py-2 px-4 border-b text-black">${Number(booking.BookingPrice).toFixed(2)}</td>
+      <td className="py-2 px-4 border-b text-black">{booking.BookingStatus}</td>
+      <td className="py-2 px-4 border-b text-black">
         {loadingPayment ? 'Fetching...' : errorPayment ? 'Error' : paymentStatus}
       </td>
       <td className="py-2 px-4 border-b space-x-2">
@@ -149,7 +149,7 @@ const BookingRow: React.FC<BookingRowProps> = ({ booking, onBookingUpdated }) =>
                 Cancel
             </button>
        )}
-       {actionLoading && <span>Loading...</span>}
+       {actionLoading && <span className="text-black">Loading...</span>}
        {actionError && <span className="text-red-500 text-sm">{actionError}</span>}
       </td>
     </tr>
