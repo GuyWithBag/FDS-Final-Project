@@ -221,6 +221,17 @@ BEGIN
 END; //
 DELIMITER ;
 
+CREATE TRIGGER update_payment_status_after_booking_completed
+AFTER UPDATE ON Booking
+FOR EACH ROW
+BEGIN
+  IF NEW.BookingStatus = 'Completed' THEN
+    UPDATE Payments
+    SET paymentStatus = 'Completed'
+    WHERE bookingID = NEW.bookingID;
+  END IF;
+END;
+
 -- -----------------------------------------------------
 -- Sample Data (Attack on Titan Themed)
 -- -----------------------------------------------------

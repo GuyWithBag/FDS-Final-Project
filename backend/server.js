@@ -9,12 +9,14 @@ const hotelRoutes = require("./routes/hotels");
 const activityRoutes = require("./routes/activities");
 const transportationRoutes = require("./routes/transportation");
 const paymentRoutes = require("./routes/payments");
-
+// In backend/server.js
+const cors = require("cors");
 dotenv.config();
-
+  
 const app = express();
-const port = process.env.PORT || 3000;
-
+const port = process.env.PORT || 3001;
+  
+app.use(cors());
 // Middleware
 app.use(express.json());
 
